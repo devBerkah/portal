@@ -1,0 +1,105 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 13, 2015, 9:44:12 AM
+    Author     : abuhapsin
+*/
+/*input*/
+@import "baseColor.less";
+
+input,select,textarea,button{
+    padding: 10px;
+    margin:5px 0px 5px 0px;
+    font-size: 1em;
+}
+.sm{
+    width:25%;
+}
+.md{
+    width:33.4%;
+}
+.mx{
+    width: 99%;
+    border:0px;
+}
+
+/*max width*/
+.inp-mx,.sel-mx,.ta-mx,.btn-mx{
+    .mx;
+}
+
+/*input*/
+input:focus{
+    border:1px solid abu; 
+}
+.inp-auto{
+    width: fit-content;
+}
+.inp-xm{
+    width: 10%;
+}
+.inp-sm{
+    .sm;
+}
+.inp-md{
+    .md;
+}
+
+/*select*/
+.sel-sm{
+    width: auto;
+}
+.sel-md{
+    .md;
+}
+
+/*textarea*/
+textarea{
+    resize: none;
+}
+.ta-sm{
+    .sm;
+}
+.ta-md{
+    .md;
+}
+/*button*/
+/*button color*/    
+button{
+    border:0;
+    opacity: 0.8;
+}
+button:hover{
+    opacity:1;
+}
+.btn-reg{
+    width: auto;
+}
+.btn-sm{
+    .sm;
+}
+.btn-md{
+    .md;
+}
+/*font size*/
+.fsm{
+    font-size: 1em;
+}
+.fmd{
+    font-size: 2em;
+}
+.fmx{
+    font-size: 3em;
+}
+
+/*label form*/
+span{
+    clear: left;
+    label{
+        float: left;
+        width: 10%;
+    }
+}

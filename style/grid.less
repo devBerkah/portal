@@ -1,0 +1,83 @@
+@import "component.less";
+//membuat variable
+@colom:12;
+
+//membuat fungsi clearfix
+.clearfix(){
+   *zoom: 1;
+   &:before,
+   &:after{
+     content: " ";
+     display: table;
+   }
+   &:after{
+     clear: both;
+   }
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+ }
+
+
+//membuat container dan row
+.container{
+    .clearfix();/*Pemanggilan fungsi clearfix*/
+    margin-right: auto;
+    margin-left: auto;
+}
+.center{
+    margin:0 auto;
+}
+.cntr-top{
+    margin:5% auto;
+}
+.left{
+    float: left;
+}
+body{
+	margin:0;
+}
+/*membuat Grid*/
+[class*="colom-"],
+[class^="colom-"]{
+   padding:5px;
+}
+.colom-1{
+   width:percentage((1/@colom)); /*width:8.333333333333332%;*/
+}
+.colom-2{
+   width:percentage((2/@colom)); /*width:16.666666666666664%;*/
+}
+.colom-3{
+   width:percentage((3/@colom)); /*width:25%;*/
+}
+.colom-4{
+   width:percentage((4/@colom)); /*width:33.33333333333333%;*/
+}
+.colom-5{
+   width:percentage((5/@colom)); /*width:41.66666666666667%;*/
+}
+.colom-6{
+   width:percentage((6/@colom)); /*width:50%;*/
+}
+.colom-7{
+   width:percentage((7/@colom)); /*width:58.333333333333336%;*/
+}
+.colom-8{
+   width:percentage((8/@colom)); /*width:66.66666666666666%;*/
+}
+.colom-9{
+   width:percentage((9/@colom)); /*width:75%;*/
+}
+.colom-10{
+   width:percentage((10/@colom)); /*width:83.33333333333334%;*/
+}
+.colom-11{
+   width:percentage((11/@colom)); /*width:91.66666666666666%;*/
+}
+.colom-12{
+   width:percentage((12/@colom)); /*width:100%;*/
+}
