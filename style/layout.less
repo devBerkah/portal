@@ -1,0 +1,83 @@
+@import 'baseColor.less';
+@import 'baseImg.less';
+@import 'baseHuruf.less';
+@import 'menuside.less';
+/*font*/
+@font-face
+{
+    font-family: f_std;
+    src: url('../fonts/ebrima.ttf'),
+        url('../fonts/ebrima.eot') format("opentype");/*for IE*/
+}
+@font-face
+{
+    font-family: f_bld;
+    src: url('../fonts/ebrimabd.ttf'),
+        url('../fonts/ebrimabd.eot') format("opentype");/*for IE*/
+}
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+//----------variabel
+@huruf:'Calibri',sans-serif;
+.pd-reg{
+    padding: 3%;
+}
+//---------variabel
+html, body {
+    height: 100%;
+    margin : 0;
+}
+body {
+    display: flex;
+    font-family: f_std;
+    font-size: 0.8em;
+    .tc_abu;
+}
+
+#kiri, #main{
+    flex: 1;
+}
+
+#kiri{
+    max-width: 15%;
+    .bg-b3;
+}
+#main {
+    overflow: auto;
+    .bg-abu;
+    .pd-reg;
+}
+/*user box*/
+.box-user{
+    min-height: 10%;
+    max-height: 10%;
+    background-color: @abu;
+}
+/*menu*/
+.subMenu{
+    padding:0;
+    border-top:1px solid @htm;
+    border-bottom:1px solid @htm;
+}
+.subMenu ul{
+    margin:0 -30px;
+}
+.subMenu ul li{
+    padding:10px;
+    margin:0;
+    display: inline-table;
+    border-bottom: 5px solid @abu;
+}
+.subMenu ul li:hover{
+    background-color: @abu2;
+    border-bottom: 5px solid @abu2;
+}
+.subMenu ul li.aktif{
+    background-color: @abu2;
+    border-bottom: 5px solid @hj;
+}
