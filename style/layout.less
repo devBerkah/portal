@@ -1,4 +1,5 @@
 @import 'baseColor.less';
+@import 'form-base.less';
 @import 'baseImg.less';
 @import 'baseHuruf.less';
 @import 'menuside.less';
@@ -48,9 +49,10 @@ body {
     .bg-b3;
 }
 #main {
-    overflow: auto;
+    overflow-x:hidden;
+    overflow-y:auto;
     .bg-abu;
-    .pd-reg;
+    padding:20px 15px 20px 15px;
 }
 /*user box*/
 .box-user{
@@ -61,23 +63,94 @@ body {
 /*menu*/
 .subMenu{
     padding:0;
-    border-top:1px solid @htm;
-    border-bottom:1px solid @htm;
+    border-top:1px solid @abu2;
+    border-bottom:1px solid @abu2;
 }
 .subMenu ul{
     margin:0 -30px;
 }
 .subMenu ul li{
     padding:10px;
-    margin:0;
+    margin-left:-3px;
     display: inline-table;
-    border-bottom: 5px solid @abu;
+}
+.subMenu ul li.inp{
+    padding:0;
 }
 .subMenu ul li:hover{
     background-color: @abu2;
-    border-bottom: 5px solid @abu2;
 }
 .subMenu ul li.aktif{
-    background-color: @abu2;
-    border-bottom: 5px solid @hj;
+    background-color: @hj;
+    color:@pth;
+    font-weight: bold;
+}
+
+.box-data{
+    background-color: @pth;
+    border:1px solid @abu2;
+    margin-top: 5px;
+    padding:1%;
+}
+
+/*alert*/
+.alt-war{
+    background-color: @kng1;
+    padding:10px;
+    color:@kng2;
+    margin:5px 0px 5px 0px;
+}
+.alt-ok{
+    background-color: @hj1;
+    padding:10px;
+    color:@hj;
+    border:0px solid @hj;
+    margin:5px 0px 5px 0px;
+}
+.alt-stop{
+    background-color: @mrh1;
+    padding:10px;
+    color:@mrh;
+    border:0px solid @hj;
+    margin:5px 0px 5px 0px;
+}
+/*tabel*/
+table{
+    width: 100%;
+    border:1px solid @abu2;
+    border-collapse: collapse;
+    tr{
+        th{
+            padding: 3px;
+            background-color: @abu;
+            font-weight: bold;
+            border:1px solid @abu2;
+        }
+        td{
+            border:1px solid @abu2;
+            padding:5px;
+        }
+    }
+}
+
+/*link*/
+a{
+    text-decoration: none;
+    color:none;
+}
+@media screen and (max-width:1024px){
+    #kiri{
+        max-width: 20%;
+        .bg-b3;
+    }
+
+    .img-user{
+        margin:4%;
+        border-radius:50px;
+        max-width: 50px;
+        float: left;
+    }
+    .logo-kiri{
+        background-size: 40%;
+    }
 }

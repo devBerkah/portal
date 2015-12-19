@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+RewriteEngine On
+#RewriteCond %{HTTPS} !on
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteBase /portal/
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+RewriteRule ^sitemap.xml$   sitemap.php
+
+RewriteRule ^index.html$    tema/index.php
+RewriteRule ^err(.*)$    index.php?login=err
+RewriteRule ^ok(.*)$    index.php?login=ok&user=$1
+RewriteRule ^sesout(.*)$    index.php?login=null
+RewriteRule ^karyawan$    tema/index.php?m=d_kary&f=tampil

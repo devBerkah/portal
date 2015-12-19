@@ -1,6 +1,7 @@
 <?php
 session_start();
-//include "cek_session.php";
+include "../include/fungsi-std.php";
+include "../include/koneksi.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,27 +10,25 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
         <title>Portal</title>
-        <link rel="stylesheet" href="../style/fa/font-awesome.css">
-        <link rel="stylesheet/less" href="../style/layout.less">
-        <script type="text/javascript" src="../js/less.min.js"></script>
-        <script type="text/javascript" src="../include/src-jquery.js"></script>
+        <link rel="stylesheet" href="./style/fa/font-awesome.css">
+        <link rel="stylesheet/less" href="./style/layout.less">
+        <script type="text/javascript" src="./js/less.min.js"></script>
+        <script type="text/javascript" src="./include/src-jquery.js"></script>
     </head>
     <body>
         <div id="kiri">
-            <?php include 'konten-kiri.php';?>
+            <?php self_dir("konten-kiri"); ?>
         </div>
         <div id="main">
-            <h1 class="headlabel">JUDUL <i class="fa fa-android"></i></h1>
-            <div class="subMenu">
-                <ul>
-                    <li>sub</li>
-                    <li>sub</li>
-                    <li>sub</li>
-                    <li>sub</li>
-                    <li>sub</li>
-                </ul>
-            </div>
-            <span class="labdev"></span>
+            <?php
+            $dir = $_GET['m'];
+            $f = $_GET['f'];
+            if($dir != NULL){
+            //memanggil  fungsi direktori
+            r_dir($dir, $f);}else{
+                echo "awal";
+            }
+            ?>
         </div>
     </body>
 </html>

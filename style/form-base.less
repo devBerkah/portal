@@ -14,6 +14,7 @@ input,select,textarea,button{
     padding: 10px;
     margin:5px 0px 5px 0px;
     font-size: 1em;
+    border:1px solid @abu2;
 }
 .sm{
     width:25%;
@@ -26,6 +27,9 @@ input,select,textarea,button{
     border:0px;
 }
 
+.f-inline{
+    margin:0;
+}
 /*max width*/
 .inp-mx,.sel-mx,.ta-mx,.btn-mx{
     .mx;
@@ -102,4 +106,29 @@ span{
         float: left;
         width: 10%;
     }
+}
+.btn-reg,.btn-war,.btn-ok,.btn-stop{
+    padding:5px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.btn-reg{
+    .bg-abu;
+    .tc_htm;
+    border:1px solid @abu2;
+}
+.btn-war{
+    background-color: @kng2;
+    color:@pth;
+    border:1px solid @kng2;
+}
+.btn-ok{
+    background-color: @hj;
+    color:@pth;
+    border:1px solid @hj;
+}
+.btn-stop{
+    background-color: @mrh;
+    color:@pth;
+    border:1px solid @mrh;
 }
