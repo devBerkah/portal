@@ -16,15 +16,31 @@ and open the template in the editor.
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: center;
+    button.btn-def{
+        margin:10px;
+        padding:2px;
+        background-color: @b2;
+        color:@b1;
+    }
+    button.btn-def:hover{
+        box-shadow:0;
+    }
 }
 
 .img-user{
     margin:4%;
-    border-radius:50px;
+    border-radius:3px;
     max-width: 55px;
     float: left;
 }
 .img-sm{
     max-width: 64px;
     width:32px;
+}
+.box-img{
+    text-align: center;
+    img{
+        max-width: 256px;
+        border-radius: 2px;
+    }
 }

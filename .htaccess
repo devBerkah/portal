@@ -12,4 +12,20 @@ RewriteRule ^index.html$    tema/index.php
 RewriteRule ^err(.*)$    index.php?login=err
 RewriteRule ^ok(.*)$    index.php?login=ok&user=$1
 RewriteRule ^sesout(.*)$    index.php?login=null
+#beranda
+RewriteRule ^beranda$    tema/index.php
+#profil
+RewriteRule ^profil$    tema/index.php?m=profil&f=tampil
+RewriteRule ^dp-change$    tema/index.php?m=profil&f=tampil&main=cImg
+RewriteRule ^pass-change$    tema/index.php?m=profil&f=tampil&main=cPass
+#karyawan
 RewriteRule ^karyawan$    tema/index.php?m=d_kary&f=tampil
+RewriteRule ^add_karyawan$    tema/index.php?m=d_kary&f=tampil&act=input
+RewriteRule ^save_karyawan$    tema/index.php?m=d_kary&f=tampil&act=save
+RewriteRule ^change-karyawan-(.*)$    tema/index.php?m=d_kary&f=tampil&act=edit&id=$1
+RewriteRule ^update-karyawan$    tema/index.php?m=d_kary&f=tampil&act=update
+RewriteRule ^detail-karyawan-(.*)$    tema/index.php?m=d_kary&f=tampil&act=detail&id=$1
+RewriteRule ^hapus-karyawan-(.*)$    tema/index.php?m=d_kary&f=tampil&act=hapus
+
+#keluar
+RewriteRule ^keluar$    tema/logout.php

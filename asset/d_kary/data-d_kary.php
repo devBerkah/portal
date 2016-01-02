@@ -15,9 +15,9 @@
     </tr>
 
     <?php
+    
     $query = mysql_query("SELECT karyawan.*, unit.nm_unit, jabatan.nm_jabatan from karyawan join unit on karyawan.id_unit = unit.id_unit join jabatan on karyawan.id_jabatan = jabatan.id_jabatan order by nik ASC ");
     $tampil = mysql_query("select rekening.no_rek, rekening.atas_nama, bank.kd_bank from rekening join bank on rekening.kd_bank = bank.kd_bank");
-
 
     while ($data = mysql_fetch_array($query)) {
         ?>
@@ -32,14 +32,15 @@
             <td><?php echo $data['email']; ?><?php ?></td>
             <td><?php echo $data['status_aktf']; ?><?php ?></td>
             <td><?php echo $data['id_unit']; ?><?php ?></td>
-            <td><?php echo $data['nm_jabatan']; ?><?php ?></td>
+            <td><?php echo $data['id_jabatan']; ?><?php ?></td>
             <td>
-                <a href=<?php echo "detail_karyawan.php?id=$data[0]" ?>><button class="btn-reg">Detail</button></a>
-                <a href=<?php echo "edit.php?id=$data[0]" ?>><button class="btn-reg">Edit</button></a>
-                <a href=<?php echo "hapus.php?id=$data[0]" ?> onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><button class="btn-stop">Hapus</button></a>
+                <a href=<?php echo "detail-karyawan-".md5($data[0]); ?>><button class="btn-reg">Detail</button></a>
+                <a href=<?php echo "change-karyawan-".md5($data[0]); ?>><button class="btn-reg">Edit</button></a>
+                <a href=<?php echo "hapus-karyawan-".md5($data[0]); ?> onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"><button class="btn-stop">Hapus</button></a>
             </td>
         </tr>
         <?php
     }
+    echo $pager->show();
     ?>
 </tr></table>

@@ -1,7 +1,11 @@
 <?php
 session_start();
+error_reporting(0);
 include "../include/fungsi-std.php";
+include "../include/paging.php";
 include "../include/koneksi.php";
+$dir = $_GET['m'];
+$f = $_GET['f'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,23 +16,37 @@ include "../include/koneksi.php";
         <title>Portal</title>
         <link rel="stylesheet" href="./style/fa/font-awesome.css">
         <link rel="stylesheet/less" href="./style/layout.less">
+        <link rel="stylesheet" type="text/css" href="./style/imgareaselect/imgareaselect-animated.css" />
         <script type="text/javascript" src="./js/less.min.js"></script>
-        <script type="text/javascript" src="./include/src-jquery.js"></script>
+        <script type="text/javascript" src="./js/src-jquery.js"></script>
+        <script type="text/javascript" src="./js/script.js"></script>
+        <script type="text/javascript" src="./js/jquery.imgareaselect.pack.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".btn-def").click(function () {
+                    $("#kiri").toggleClass("kiri-sm");
+                });
+            });
+        </script>
     </head>
     <body>
         <div id="kiri">
             <?php self_dir("konten-kiri"); ?>
         </div>
         <div id="main">
+            <div id="main_menu">
+                <?php self_dir("miniheader"); ?>
+            </div>
+            <div id="main_content">
             <?php
-            $dir = $_GET['m'];
-            $f = $_GET['f'];
-            if($dir != NULL){
-            //memanggil  fungsi direktori
-            r_dir($dir, $f);}else{
+            if ($dir != NULL) {
+                //memanggil  fungsi direktori
+                r_dir($dir, $f);
+            } else {
                 echo "awal";
             }
             ?>
+            </div>
         </div>
     </body>
 </html>

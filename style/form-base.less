@@ -15,6 +15,18 @@ input,select,textarea,button{
     margin:5px 0px 5px 0px;
     font-size: 1em;
     border:1px solid @abu2;
+    border-radius: 2px;
+}
+input:required,select:required,textarea:required{
+    border:1px solid @mrh1;
+}
+input:read-only{
+    background-color: @abu;
+    color:@htm;
+}
+option{
+    background-color: @b1;
+    color:@pth;
 }
 .sm{
     width:25%;
@@ -75,13 +87,13 @@ textarea{
 button{
     border:0;
     opacity: 0.8;
+    font-weight: bold;
 }
 button:hover{
     opacity:1;
+    box-shadow: 0px 0px 2px @abu2;
 }
-.btn-reg{
-    width: auto;
-}
+
 .btn-sm{
     .sm;
 }
@@ -110,7 +122,6 @@ span{
 .btn-reg,.btn-war,.btn-ok,.btn-stop{
     padding:5px;
     cursor: pointer;
-    opacity: 0.5;
 }
 .btn-reg{
     .bg-abu;
@@ -128,7 +139,56 @@ span{
     border:1px solid @hj;
 }
 .btn-stop{
+    background-color: transparent;
+    color:@mrh;
+    border:1px solid @mrh;
+}
+.btn-stop:hover{
     background-color: @mrh;
     color:@pth;
-    border:1px solid @mrh;
+}
+
+/*label*/
+div.formbox{
+    label{
+        float: left;
+        width: 150px;
+        font-size: 16px;
+        i:before{
+            content:"*";
+            color:@mrh;
+        }
+    }
+}
+div.databox{
+    padding:10px;
+    font-size:20px;
+    font-weight: bold;
+    border-bottom:1px solid @abu;
+    label{
+        font-weight: lighter;
+        color:@htm;
+        float: left;
+        width: 150px;
+        font-size: 16px;
+        i:before{
+            content:"*";
+            color:@mrh;}
+    }
+}
+
+/*float*/
+.fl-right{
+    right: 0;
+}
+.fl-left{
+    float:left;
+}
+.formbox-grup{
+    display: inline-block;
+    label:first-child{
+        float:left;
+        width: 150px;
+        font-size: 16px;
+    }
 }

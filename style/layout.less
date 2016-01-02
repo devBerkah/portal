@@ -48,11 +48,20 @@ body {
     max-width: 15%;
     .bg-b3;
 }
+.kiri-sm{
+    max-width: 5%;
+    .bg-b3;
+}
 #main {
     overflow-x:hidden;
     overflow-y:auto;
     .bg-abu;
+}
+#main_content{
     padding:20px 15px 20px 15px;
+}
+#main_menu{
+    display: none;
 }
 /*user box*/
 .box-user{
@@ -73,6 +82,7 @@ body {
     padding:10px;
     margin-left:-3px;
     display: inline-table;
+    color: @htm;
 }
 .subMenu ul li.inp{
     padding:0;
@@ -90,28 +100,51 @@ body {
     background-color: @pth;
     border:1px solid @abu2;
     margin-top: 5px;
+    margin-bottom: 10px;
     padding:1%;
+}
+.headbox{
+    border-bottom:1px solid @abu;
+    font-size: 20px;
+    padding:10px;
+    .cetak{
+        display: inline;
+        float:right;
+        font-size: 12px;
+    }
 }
 
 /*alert*/
+.alt-reg,.alt-war,.alt-ok,.alt-stop{
+    border-radius:3px;
+}
+.alt-reg{
+    background-color: @abu;
+    padding:10px;
+    color:@htm;
+    border:1px solid @abu2;
+    margin:5px 0px 5px 0px;
+}
 .alt-war{
     background-color: @kng1;
     padding:10px;
     color:@kng2;
     margin:5px 0px 5px 0px;
+    border:1px solid @kng2;
 }
 .alt-ok{
     background-color: @hj1;
     padding:10px;
     color:@hj;
-    border:0px solid @hj;
+    border:1px solid @hj;
     margin:5px 0px 5px 0px;
+
 }
 .alt-stop{
     background-color: @mrh1;
     padding:10px;
     color:@mrh;
-    border:0px solid @hj;
+    border:1px solid @mrh;
     margin:5px 0px 5px 0px;
 }
 /*tabel*/
@@ -134,9 +167,12 @@ table{
 }
 
 /*link*/
-a{
+a,a b{
     text-decoration: none;
     color:none;
+}
+a.reg-link{
+    color:@htm;
 }
 @media screen and (max-width:1024px){
     #kiri{
@@ -152,5 +188,112 @@ a{
     }
     .logo-kiri{
         background-size: 40%;
+    }
+}
+@media screen and (max-width:720px){
+    body{
+        font-size: 12px;
+    }
+    #kiri{
+        display: none;
+    }
+    #main{
+        height: 100%;
+    }
+    #main_menu{
+        display: block;
+    }
+    .logo-kiri{
+        background-size: 20%;
+        min-height:100px;
+        margin:0px;
+    }
+    div #menuh{
+        background-color: @b2;
+    }
+    #menuh > li{
+        padding:10px;
+        margin:0;
+        background-color: @b2;
+        label{
+            display: none;
+        }
+        display: inline-table;
+    }
+    .headlabel{
+        font-size: 18px;
+    }
+    /*submainmenu*/
+    .subMainMenu{
+        background-color: @b3;
+    }
+    .subMainMenu ul{
+        margin:0 -30px;
+    }
+    .subMainMenu ul li{
+        border-top:5px solid @b3;
+        padding:10px;
+        margin-left:-3px;
+        display: inline-table;
+        color: @htm;
+        font-size: 20px;
+    }
+    .subMainMenu ul li label{
+        display: none;
+    }
+    .subMainMenu ul li.inp{
+        padding:0;
+    }
+    .subMainMenu ul li:hover{
+        a{
+            color:@kng;
+        }
+        background-color: @b2;
+        color:@kng;
+        border-top:5px solid @kng;
+    }
+    .subMainMenu ul li.aktif{
+        background-color: @hj;
+        color:@pth;
+        font-weight: bold;
+    }
+    .subMainMenu ul li a{
+        color:@pth;
+    }
+    .subMainMenu ul li.aktif{
+        background-color: @abu;
+        border-top:5px solid @hj;
+        a{
+            color:@b1;
+        }
+    }
+    /*submenu*/
+    .subMenu{
+        padding:0;
+        border-top:1px solid @abu2;
+        border-bottom:1px solid @abu2;
+    }
+    .subMenu ul{
+        margin:0 -30px;
+    }
+    .subMenu ul li{
+        padding:10px;
+        margin-left:-3px;
+        display: inline-table;
+        color: @htm;
+    }
+    .subMenu ul li label{
+        display: none;
+    }
+    .subMenu ul li.inp{
+        padding:0;
+    }
+    .subMenu ul li:hover{
+        background-color: @abu2;
+    }
+    .subMenu ul li.aktif{
+        background-color: @hj;
+        color:@pth;
+        font-weight: bold;
     }
 }

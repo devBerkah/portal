@@ -418,4 +418,18 @@ function tanggaloncls($nm,$cls) {
     }
     echo"</select>";
 }
+
+//cek menu
+function menuaktif($mod,$menu){
+    if($mod==$menu){
+        $class="class='aktif'";
+    }
+    return $class;
+}
+function subaktif($act,$sub){
+    if($act==$sub){
+        $class="class='aktif'";
+    }
+    return $class;
+}
 ?>
