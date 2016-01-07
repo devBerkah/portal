@@ -1,9 +1,14 @@
 <?php
 session_start();
 error_reporting(0);
-include "../include/fungsi-std.php";
 include "../include/paging.php";
-include "../include/koneksi.php";
+include "../include/fungsi-std.php";
+$jabatan = $_SESSION['jabatan'];
+$unit= $_SESSION['unit'];
+//$db="berkahgl_".strtolower($unit);
+$db=strtolower($unit);
+//open koneksi
+konOpen($db);
 $dir = $_GET['m'];
 $f = $_GET['f'];
 ?>
@@ -31,7 +36,9 @@ $f = $_GET['f'];
     </head>
     <body>
         <div id="kiri">
-            <?php self_dir("konten-kiri"); ?>
+            <?php 
+            self_dir("konten-kiri"); 
+            ?>
         </div>
         <div id="main">
             <div id="main_menu">
@@ -48,5 +55,4 @@ $f = $_GET['f'];
             ?>
             </div>
         </div>
-    </body>
 </html>

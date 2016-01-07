@@ -432,4 +432,38 @@ function subaktif($act,$sub){
     }
     return $class;
 }
+//user data
+function cekUserdata($id){
+    $q=  mysql_query("SELECT * FROM karyawan where nik='$id'");
+
+    return $q;
+}
+//open koneksi
+function konOpen($dbname){
+$host='localhost';
+$user='root';
+$pass=''; 
+$db=$dbname; 
+if(!mysql_connect($host,$user,$pass)) echo "Tdk Konek Ke Database, Silahkan Cek Apakah Konfigurasi sudah sesuai ?";
+if(!mysql_select_db($db)) echo "Database Tdk Ada , Silahkan cek kembali !";
+}
+
+
+//selisih tanggal
+function selisihTgl($tgl1,$tgl2){
+	$selisih = ((abs(strtotime($tgl1)-strtotime($tgl2)))/(60*60*24));
+	return $selisih;
+}
+
+//ribuan
+
+function ribuan( $curr )
+{
+	$ribuan = number_format($curr, 0, '.',',');
+	return $ribuan;
+}
+
+
+
+
 ?>

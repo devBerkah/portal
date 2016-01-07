@@ -45,8 +45,9 @@ body {
 }
 
 #kiri{
-    max-width: 15%;
+    max-width: 17%;
     .bg-b3;
+    overflow: auto;
 }
 .kiri-sm{
     max-width: 5%;
@@ -101,7 +102,7 @@ body {
     border:1px solid @abu2;
     margin-top: 5px;
     margin-bottom: 10px;
-    padding:1%;
+    padding:3%;
 }
 .headbox{
     border-bottom:1px solid @abu;
@@ -296,4 +297,23 @@ a.reg-link{
         color:@pth;
         font-weight: bold;
     }
+    /*form*/
+    .sm,.md,.mx{
+    width:99%;
+    }
+    .formbox,.formbox-grup{
+        input,textarea,select{
+            width:93%;
+        }
+    }
+    .headbox{
+    border-bottom:1px solid @abu;
+    font-size: 15px;
+    padding:10px;
+    .cetak{
+        display: inline;
+        float:right;
+        font-size: 12px;
+    }
+}
 }

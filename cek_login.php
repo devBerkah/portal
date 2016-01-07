@@ -9,12 +9,17 @@
 	
 	$ada=mysql_num_rows($login);
 	$data=mysql_fetch_array($login);
-
+        
 	if ($ada > 0) {
 		session_start();
+                //cekkaryawan
+                $qkaryawan=  cekUserdata($data['nik']);
+                $dkaryawan= mysql_fetch_array($qkaryawan);
 		$_SESSION['username'] = $data['username'];
 		$_SESSION['password'] = $data['password'];
 		$_SESSION['nik'] = $data['nik'];
+		$_SESSION['jabatan'] = $dkaryawan['id_jabatan'];
+		$_SESSION['unit'] = $dkaryawan['id_unit'];
 		
 ?>
 	

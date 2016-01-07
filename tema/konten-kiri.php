@@ -1,4 +1,7 @@
 <?php
+$jabatan = $_SESSION['jabatan'];
+$unit= $_SESSION['unit'];
+echo $unit."-".$jabatan;
 $dir = htmlspecialchars(mysql_escape_string($_GET['m']));
 $f = htmlspecialchars(mysql_escape_string($_GET['f']));
 ?>
@@ -7,12 +10,13 @@ $f = htmlspecialchars(mysql_escape_string($_GET['f']));
     <?php include 'user-data.php'; ?>
 </div>
 <div id='cssmenu'>
-    <ul>
-        <li><a href='beranda' <?php echo menuaktif($dir, ""); ?>><i class="fa fa-home"></i> <label>Beranda</label> </a></li>
-        <li><a href='karyawan' <?php echo menuaktif($dir, "d_kary"); ?> ><i class="fa fa-users"></i> <label>Karyawan</label> </a></li>
-        <li><a href='#'><i class="fa fa-exchange"></i> <label>Mutasi</label> </a></li>
-        <li><a href='#'><i class="fa fa-calendar"></i> <label>Absensi</label> </a></li>
-        <li><a href='#'><i class="fa fa-credit-card"></i> <label>Penggajian</label> </a></li>
-        <li><a href='keluar'><i class="fa fa-sign-out"></i> <label>Keluar</label></a></li>
-    </ul>    
+    <?php
+    switch ($jabatan) {
+        case "FIN":
+            include_once 'menu/menu-finunit.php';
+            break;
+        default :
+            include_once 'menu-hrd.php';
+    }
+    ?>
 </div>

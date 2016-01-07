@@ -4,7 +4,7 @@ RewriteEngine On
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteBase /portal/
+RewriteBase /portal_unit/
 #RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 RewriteRule ^sitemap.xml$   sitemap.php
 
@@ -26,6 +26,11 @@ RewriteRule ^change-karyawan-(.*)$    tema/index.php?m=d_kary&f=tampil&act=edit&
 RewriteRule ^update-karyawan$    tema/index.php?m=d_kary&f=tampil&act=update
 RewriteRule ^detail-karyawan-(.*)$    tema/index.php?m=d_kary&f=tampil&act=detail&id=$1
 RewriteRule ^hapus-karyawan-(.*)$    tema/index.php?m=d_kary&f=tampil&act=hapus
+#produksi
+RewriteRule ^produksi$    tema/index.php?m=produksi&f=tampil
+RewriteRule ^stokayam$    tema/index.php?m=produksi&f=tampil&act=stokayam
+RewriteRule ^inputbop$    tema/index.php?m=produksi&f=tampil&act=inputbop
+RewriteRule ^piutangsap$    tema/index.php?m=produksi&f=tampil&act=piutangsap
 
 #keluar
 RewriteRule ^keluar$    tema/logout.php
