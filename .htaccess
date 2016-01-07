@@ -4,7 +4,7 @@ RewriteEngine On
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteBase /portal_unit/
+RewriteBase /portal/
 #RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 RewriteRule ^sitemap.xml$   sitemap.php
 
